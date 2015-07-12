@@ -144,3 +144,19 @@ t.test(male_c,female_c)
 
 # p-value for this test is 0.1189, so we can't reject null hypothesis.
 # Therefore, the percentage of spending for clothes between males and females are the same.
+
+#----------------------------------------------------
+
+income=c(studentdata$Q5)
+
+#Barplot of the income of all students
+lnbar <- barplot(table(income) ,xlim= c(0,13), ylim= c(0,14), legend = c("0-100", "200-300", "300-400", "400-500", "500-600", "600-700", "700-800", "800+"), 
+                 main="Income of Student", xlab= "Income", ylab= "Number of students",
+                 col = c("aquamarine4", "red", "cadetblue2", "chartreuse3", "darkblue", "darkgoldenrod2", "darkgreen", "darkorchid2"),
+                 args.legend = list(x = "topright", bty = "n", inset=0))
+
+#Adding Line and points to the barplot
+lines(x = lnbar, y = table(income)/10, lwd = 2)
+points(x = lnbar, y = table(income)/10, lwd = 3)
+
+#----------------------------------------------------
